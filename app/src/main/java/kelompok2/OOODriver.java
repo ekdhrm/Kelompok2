@@ -8,15 +8,15 @@ public class OOODriver {
     public void insertMedal(CoreMedal medal) throws TransformationException{
         switch (medal.getType()) {
             case HEAD -> {
-                if (head != null) throw new TransformationException("Anu");
+                if (head != null) throw new TransformationException("no head inserted");
                 head = medal;
             }
             case ARMS -> {
-                if (arms != null) throw new TransformationException("Anu");
+                if (arms != null) throw new TransformationException("no arms inserted");
                 arms = medal;
             }
             case LEGS -> {
-                if (legs != null) throw new TransformationException("Anu");
+                if (legs != null) throw new TransformationException("no legs inserted");
                 legs = medal;
             }
             default -> throw new AssertionError();

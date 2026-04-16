@@ -3,12 +3,54 @@
  */
 package kelompok2;
 
+import javax.xml.transform.TransformerException;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TransformerException, TransformationException {
         System.out.println(new App().getGreeting());
+
+        TransformationEngine engine = new TransformationEngine();
+        OScanner scanner = new OScanner(engine);
+        OOODriver driver = new OOODriver();
+        CoreMedal taka = new CoreMedal("Taka", CoreMedal.MedalType.HEAD);
+        CoreMedal tora = new CoreMedal("Tora", CoreMedal.MedalType.ARMS);
+        CoreMedal batta = new CoreMedal("Batta", CoreMedal.MedalType.LEGS);
+        CoreMedal kujaku = new CoreMedal("Kujaku", CoreMedal.MedalType.ARMS);
+        CoreMedal condor = new CoreMedal("Condor", CoreMedal.MedalType.LEGS);
+
+        System.out.println("=== OOO DRIVER SIMULATOR ===");
+        try {
+            System.out.println("Memasukkan medal");
+            driver.insertMedal(taka);
+            driver.insertMedal(tora);
+            driver.insertMedal(batta);
+            // driver.insertMedal(kujaku);
+            // driver.insertMedal(condor);
+
+            System.out.println("Medal berhasil dimasukkan");
+            System.out.println("Memulai proses Scanning");
+            
+            String hasilScan = scanner.scan(driver);
+            System.out.println("Hasil: " + hasilScan);
+            
+            System.out.println("\nScan ulang dengan medal yang sama");
+            String hasilScanUlang = scanner.scan(driver);
+            System.out.println("Hasil: " + hasilScanUlang);
+            
+            // System.out.println("Memasukkan medal ke Tajadol Device");
+            // scanner.scanInsertTajadolMedal(0, taka);
+            // scanner.scanInsertTajadolMedal(1, tora);
+            // scanner.scanInsertTajadolMedal(2, batta);
+            // System.out.println("Medal berhasil dimasukkan ke Tajadol Device");
+            
+            // System.out.println("Memulai proses Scanning pada Tajadol Device");
+            // System.out.println(scanner.scanFinisher());
+        } catch (TransformationException e) {
+            System.out.println("ERROR TERDETEKSI: " + e.getMessage());
+        }
     }
 }
