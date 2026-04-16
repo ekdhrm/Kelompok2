@@ -6,13 +6,12 @@ package kelompok2;
 import javax.xml.transform.TransformerException;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+    // public String getGreeting() {
+    //     return "Hello World!";
+    // }
 
     public static void main(String[] args) throws TransformerException, TransformationException {
-        System.out.println(new App().getGreeting());
-
+        
         TransformationEngine engine = new TransformationEngine();
         OScanner scanner = new OScanner(engine);
         OOODriver driver = new OOODriver();
