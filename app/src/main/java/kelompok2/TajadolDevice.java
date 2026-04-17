@@ -46,9 +46,8 @@ public class TajadolDevice {
             }
         }
 
-        double damage = (double) scanned / TOTAL_SLOTS * 15;
+        double power = (double) scanned / TOTAL_SLOTS * 100;
 
-        return "Tajadol Kick! Scanned: " + scanned +
-                "/7 | Damage: " + String.format("%.2f", damage);
+        return "Tajadol Strike! Scanned: " + scanned + "/7 | Power: " + String.format("%.2f", power) + "%";
     }
 }

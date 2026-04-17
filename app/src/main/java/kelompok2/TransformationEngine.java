@@ -29,7 +29,7 @@ public class TransformationEngine {
 
                         if (comboName.equals("TAJADOL")) {
                             tajadolDevice.setTajadolForm(true);
-                            return "Combo: TAJADOL | Ready";
+                            return "Combo: TAJADOL";
                         }
 
                         return "Combo: " + comboName;
@@ -69,7 +69,7 @@ public class TransformationEngine {
         if (tajadolDevice.isTajadolForm()) {
             result = tajadolDevice.spinAndScan();
         } else {
-            result = "Normal Combo Finisher!";
+            result = "Scanning Charge!";
         }
 
         // balik ke transformed setelah finisher

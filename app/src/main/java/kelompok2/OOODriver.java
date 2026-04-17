@@ -23,8 +23,14 @@ public class OOODriver {
         }
     }
 
-    boolean isComplete(){
+    boolean isComplete() {
         return head != null && arms != null && legs != null;
+    }
+    
+    public void reset() {
+        head = null;
+        arms = null;
+        legs = null;
     }
 
     public CoreMedal getHead() { return head; }
