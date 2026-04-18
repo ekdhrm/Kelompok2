@@ -40,7 +40,7 @@ public class App {
             System.out.println("Hasil: " + scanner.scan(driver));
 
             System.out.println("Ejecting...");
-            // driver.reset();
+            driver.reset();
             engine.reset();
 
             // =========================================
@@ -60,7 +60,7 @@ public class App {
             System.out.println("Charge Result: " + scanner.scan(driver));
 
             System.out.println("Ejecting...");
-            // driver.reset();
+            driver.reset();
             engine.reset();
 
             // =========================================
@@ -90,7 +90,7 @@ public class App {
             System.out.println("Device Result: " + scanner.scanFinisher());
 
             System.out.println("Ejecting...");
-            // driver.reset();
+            driver.reset();
             engine.reset();
 
             // =========================================
@@ -107,7 +107,7 @@ public class App {
             System.out.println("Hasil: " + scanner.scan(driver));
 
             System.out.println("Ejecting...");
-            // driver.reset();
+            driver.reset();
             engine.reset();
 
         } catch (TransformerException | TransformationException e) {
